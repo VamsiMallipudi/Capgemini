@@ -1,0 +1,54 @@
+import java.util.*;
+
+class Login{
+    String userId = "Ajay",password = "password";
+    public String loginUser(String user, String pass)
+    {
+      String o1 = new String();
+      o1 = "Welcome Ajay";
+      String o2 = new String();
+      o2 = "You have entered wrong credentials ,please enter the right credentials.";
+      if(user.equals(userId) && pass.equals(password))
+      {
+        return o1;
+      }
+      return o2;
+    }
+}
+
+public class Assignment1Q6 {
+    public static void main(String[] args)
+    {
+      Login ob = new Login();
+      Scanner s = new Scanner(System.in);
+      String out = new String();
+      int count=0;
+      String e1 = "Welcome Ajay";
+      String e2 = "You have entered wrong credentials ,please enter the right credentials.";
+      String e3 = "Contact Admin";
+      for(int i=0;i<3;i++)
+      {
+        count++;
+        String u = s.nextLine();
+        String p = s.nextLine();
+        out = ob.loginUser(u,p);
+        if(count<=3)
+        {
+          if(out.equals(e1))
+          {
+            System.out.println(out);
+            break;
+          }
+          else if(i==2)
+          {
+            System.out.println("You have entered wrong credentials 3 times");
+            System.out.print("Contact Admin");
+          }
+          else
+          {
+            System.out.println(out);
+          }
+        }
+      }
+    }
+}

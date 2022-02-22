@@ -1,0 +1,36 @@
+import java.util.*;
+
+class BubbleSort{
+
+    public int[] bubbleSort(int arr[])
+    {
+      int n = arr.length;
+      for(int i=0;i<n;i++)
+      {
+        for(int j=1;j<n-i;j++)
+        {
+          if(arr[j]<arr[j-1])
+          {
+            int temp = arr[j];
+            arr[j] = arr[j-1];
+            arr[j-1] = temp;
+          }
+        }
+      }
+      return arr;
+    }
+}
+
+public class Assignment1Q8 {
+    public static void main(String args[]) {
+      BubbleSort ob = new BubbleSort();
+      int arr[] = {5,12,14,6,78,19,1,23,26,35,37,7,52,86,47};
+      int m = arr.length;
+      int [] a = new int[m];
+      a = ob.bubbleSort(arr);
+      for(int i=0;i<m;i++)
+      {
+        System.out.print(a[i]+" ");
+      }
+    }
+}

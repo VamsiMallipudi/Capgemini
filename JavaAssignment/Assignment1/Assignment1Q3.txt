@@ -1,0 +1,31 @@
+import java.util.*;
+class SiCi {
+    public double simpleInterest(double principalAmount,int time,double interestRate)
+    {
+      double simple;
+      simple = (principalAmount * (double)time * interestRate)/100;
+      return simple;
+    }
+
+    public double compoundInterest(double principalAmount,int time,double interestRate)
+    {
+      double compound;
+      compound = (principalAmount*(Math.pow(1+interestRate,time))-principalAmount);
+      return compound;
+    }
+}
+
+public class Assignment1Q3 {
+    public static void main (String args[])
+    {
+      SiCi ob = new SiCi();
+      Scanner s = new Scanner(System.in);
+      double p = s.nextDouble();
+      int t = s.nextInt();
+      double r = s.nextDouble();
+      double SI = ob.simpleInterest(p,t,r);
+      System.out.println(SI);
+      double CI = ob.compoundInterest(p,t,r);
+      System.out.println(CI);
+}
+}

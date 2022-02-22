@@ -1,0 +1,35 @@
+import java.util.*;
+
+class ResultDeclaration{
+    public String declareResults( double s1, double s2, double s3)
+    {
+      String res1 = new String();
+      res1 = "passed";
+      String res2 = new String();
+      res2 = "promoted";
+      String res3 = new String();
+      res3 = "failed";
+      if(s1>60 && s2>60 && s3>60)
+      {
+        return res1;
+      }
+      else if((s1>60 && s2>60 && s3<60)||(s1>60 && s2<60 && s3>60)||(s1<60 && s2>60 && s3>60))
+      {
+        return res2;
+      }
+      return res3;
+    }
+}
+
+public class Assignment1Q4 {
+    public static void main(String[] args)
+    {
+      ResultDeclaration ob = new ResultDeclaration();
+      Scanner s = new Scanner(System.in);
+      double s1 = s.nextDouble();
+      double s2 = s.nextDouble();
+      double s3 = s.nextDouble();
+      String result = ob.declareResults(s1,s2,s3);
+      System.out.println(result);
+    }
+}
